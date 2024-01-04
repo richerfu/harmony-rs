@@ -1,6 +1,10 @@
 {
   "src": [
     "pages/Index",
-    "pages/CustomBuiltInComponentStyle"
+    "pages/CustomBuiltInComponentStyle",
+    "pages/CustomComponent",
+    "pages/Lifecycle",
+    "pages/Animation",
+    "pages/Animate"
   ]
 }

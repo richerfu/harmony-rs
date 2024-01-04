@@ -6,8 +6,6 @@ struct CustomBuiltInComponentStyle {
   build() {
     Row() {
       Column({ space: 20 }) {
-        Button('CustomBackgroundColor').backgroundColor('red');
-
         Button('ComplexCustomStyle', { type: ButtonType.Normal })
           .borderRadius(4)
           .fontColor('white')
