@@ -1,6 +1,8 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
+import relationalStore from '@ohos.data.relationalStore';
+import { CREATE_SQL, STORE_CONFIG } from '../constants';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want, launchParam) {
@@ -11,9 +13,15 @@ export default class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
-  onWindowStageCreate(windowStage: window.WindowStage) {
+  async onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+
+    // 创建连接
+    const store = await relationalStore.getRdbStore(this.context, STORE_CONFIG);
+
+    // 创建数据表
+    store.executeSql(CREATE_SQL);
 
     windowStage.loadContent('pages/Index', (err, data) => {
       if (err.code) {

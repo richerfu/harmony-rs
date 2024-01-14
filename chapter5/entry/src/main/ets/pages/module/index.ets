@@ -13,10 +13,10 @@ export class Todo {
   // 是否删除  0: 未删除 1: 已删除
   public isDelete: number;
 
-  constructor(content: string) {
-    this.id = generateUniqueId();
+  constructor(content: string,id?: string,status?: number,isDelete?: number) {
+    this.id = id || generateUniqueId();
     this.content = content;
-    this.status = 0;
-    this.isDelete = 0;
+    this.status = status || 0;
+    this.isDelete = isDelete || 0;
   }
 }

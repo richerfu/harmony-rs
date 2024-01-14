@@ -1,6 +1,8 @@
 import hilog from '@ohos.hilog';
+import relationalStore from '@ohos.data.relationalStore';
 import { RecordInput, RecordItem, Footer } from './component';
 import { Todo } from './module'
+import { STORE_CONFIG } from '../constants'
 
 @Entry
 @Component
@@ -10,6 +12,7 @@ struct Index {
   @State completeCount: number = 0;
   @State currentType: string = 'all';
   @State renderRecord: Todo[] = [];
+  private store: relationalStore.RdbStore = null;
 
   onChange() {
     const r = this.record.filter(i => i.status === 0 && i.isDelete === 0);
@@ -17,8 +20,30 @@ struct Index {
     this.restCount = r.length;
     this.completeCount = c.length;
     this.renderRecord = this.record.filter(i => i.isDelete === 0);
+
+    this.record.forEach(r => {
+      this.updateStore(r);
+    })
   }
 
+  updateStore = async (record: Todo) => {
+    let predicates = new relationalStore.RdbPredicates("todos");
+    predicates.equalTo("id", record.id);
+    const result = await this.store.query(predicates, ['id']);
+    const valueBucket = {
+      "id": record.id,
+      "content": record.content,
+      "status": record.status,
+      "is_delete": record.isDelete
+    };
+    // 记录不存在
+    if (result.rowCount === 0) {
+      let c = await this.store.insert('todos', valueBucket);
+      hilog.info(0x0000, 'testTag', `${c}`);
+    } else {
+      await this.store.update(valueBucket, predicates);
+    }
+  }
   onFinish = (content: string) => {
     hilog.info(0x0000, 'testTag', '%{public}s', content);
     this.record.push(new Todo(content));
@@ -39,6 +64,19 @@ struct Index {
   onDelete = () => {
     this.onChange();
   }
+  getStoreRecords = (resultSet: relationalStore.ResultSet): Todo[] => {
+    const result: Todo[] = [];
+    while (resultSet.goToNextRow()) {
+      const id = resultSet.getString(resultSet.getColumnIndex("id"));
+      const content = resultSet.getString(resultSet.getColumnIndex("content"));
+      const status = resultSet.getDouble(resultSet.getColumnIndex("status"));
+      const isDelete = resultSet.getDouble(resultSet.getColumnIndex("is_delete"));
+      result.push(new Todo(content, id, status, isDelete))
+    }
+    // 释放数据集的内存
+    resultSet.close();
+    return result;
+  }
   onTopToggle = (isOn: boolean) => {
     hilog.info(0x0000, 'testTag', `${isOn}`);
     this.record = this.record.map(i => {
@@ -47,6 +85,13 @@ struct Index {
       }
       return i;
     })
+  }
+
+  async aboutToAppear() {
+    this.store = await relationalStore.getRdbStore(getContext(this), STORE_CONFIG);
+    const result = await this.store.querySql("SELECT * FROM todos");
+    const records = this.getStoreRecords(result);
+    this.record = records;
   }
 
   build() {

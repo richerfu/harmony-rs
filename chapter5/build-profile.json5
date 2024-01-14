@@ -5,7 +5,22 @@
     "products": [
       {
         "name": "default",
-        "signingConfig": "default",
+        "signingConfig": "default"
+      }
+    ],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/ranger/.ohos/config/auto_debug_chapter5_com.example.chapter4_30086000610913485.cer",
+          "storePassword": "0000001B527D91972C59242A0D3FFAA8DD350E123BC81F9A4ED3770347A7B0D4B0576A9337F8ECEBA74C5B",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B1A584D929A293D8075F742FD31257D352985BFCC9F5965B351A16FEC4FCA1C17A6BD853AD2EADA",
+          "profile": "/Users/ranger/.ohos/config/auto_debug_chapter5_com.example.chapter4_30086000610913485.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/ranger/.ohos/config/auto_debug_chapter5_com.example.chapter4_30086000610913485.p12"
+        }
       }
     ]
   },
