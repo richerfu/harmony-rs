@@ -1,5 +1,6 @@
 use std::rc::Rc;
 use std::sync::{Arc, Mutex};
+use std::sync::atomic::{AtomicI32, Ordering};
 use std::thread;
 
 #[derive(Debug)]
@@ -8,20 +9,26 @@ struct User<'a> {
 }
 
 pub fn arc_test() {
-    // let a = User { name: "hello" };
-    // let b = a;
-    //
-    // println!("{:?},{:?}", a, b);
-
-    let mut a = Rc::new(User { name: "hello" });
-
-    let b = a.clone();
-
-    println!("{:?},{:?}", a, b);
+    let a = Arc::new(AtomicI32::new(0));
+    let handle_a = a.clone();
+    let handle1 = thread::spawn(move || {
+        for _ in 0..10000 {
+            handle_a.fetch_add(1,Ordering::Relaxed);
+        }
+    });
+    let handle_b = a.clone();
+    let handle2 = thread::spawn(move || {
+        for _ in 0..10000 {
+            handle_b.fetch_add(1,Ordering::Relaxed);
+        }
+    });
+    handle1.join().unwrap();
+    handle2.join().unwrap();
+    println!("{:?}",a);
 }
 
 pub fn mutex_test() {
-    let a = Arc::new(Mutex::new(User { name: "rust" }));
+    let a = Arc::new(Mutex::new(-1));
 
     let mut handle = Vec::new();
 
@@ -29,8 +36,7 @@ pub fn mutex_test() {
         let code = a.clone();
         handle.push(thread::spawn(move || {
             let mut data = code.lock().unwrap();
-            let c =  format!("rust {:?}", thread::current().id()).clone();
-            data.name = "test";
+            (*data) = i;
             println!("{:?}", &data);
         }))
     }
