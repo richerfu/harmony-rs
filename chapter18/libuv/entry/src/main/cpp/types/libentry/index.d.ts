@@ -1,0 +1,1 @@
+export const asyncWork: (a: number) => Promise<number>;
