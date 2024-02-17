@@ -79,4 +79,18 @@ extern "C" {
         property_count: usize,
         properties: *const napi_property_descriptor,
     ) -> napi_status;
+    pub fn napi_set_named_property(
+        env: napi_env,
+        object: napi_value,
+        utf8name: *const c_char,
+        value: napi_value,
+    ) -> napi_status;
+    pub fn napi_create_function(
+        env: napi_env,
+        utf8name: *const c_char,
+        length: usize,
+        cb: napi_callback,
+        data: *mut c_void,
+        result: *mut napi_value,
+    ) -> napi_status;
 }

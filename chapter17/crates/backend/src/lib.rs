@@ -27,8 +27,7 @@ pub fn api(_attr: TokenStream, input: TokenStream) -> TokenStream {
                     env: sys::napi_env,
                     exports: sys::napi_value,
                 ) -> sys::napi_value {
-                    let desc = crate::register::gen_fn();
-                    sys::napi_define_properties(env, exports, desc.len(), desc.as_ptr());
+                    let desc = crate::register::gen_fn(env,exports);
                     exports
                 }
                 #[ctor::ctor]

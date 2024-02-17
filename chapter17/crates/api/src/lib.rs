@@ -1,5 +1,5 @@
-mod value;
 mod register;
+mod value;
 
 use backend::api;
 
@@ -12,4 +12,3 @@ pub fn add(left: f64, right: f64) -> f64 {
 pub fn minus(left: f64, right: f64) -> f64 {
     left - right
 }
-

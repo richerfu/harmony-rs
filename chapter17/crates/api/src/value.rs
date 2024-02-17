@@ -23,4 +23,3 @@ impl NapiValue for f64 {
         res
     }
 }
-
