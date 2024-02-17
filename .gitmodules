@@ -1,0 +1,3 @@
+[submodule "chapter24/mmkv/mmkv"]
+	path = chapter24/mmkv/mmkv
+	url = https://github.com/Tencent/MMKV

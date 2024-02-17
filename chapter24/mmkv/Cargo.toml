@@ -1,0 +1,17 @@
+[package]
+name    = "mmkv"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+napi-ohos        = { version = "*" }
+napi-derive-ohos = { version = "*" }
+
+[build-dependencies]
+napi-build-ohos = { version = "*" }
+cc = "1.0.83"
