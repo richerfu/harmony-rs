@@ -1,12 +1,17 @@
 use cc::Build;
-use napi_build_ohos;
+use std::env;
 
 fn main() {
+    let h = env::current_dir().unwrap().join("mmkv/Core");
+    println!("cargo:rustc-link-search={:?}",&h);
+
     Build::new()
-        .file("mmkv/Core/MMKV.cpp")
+        .file("wraper.cpp")
         .debug(true)
         .cpp(true)
-        .cpp_link_stdlib("c++_shared")
-        .compile("mmkv");
+        .include(h)
+        .cpp_link_stdlib("c++_static")
+        .compile("native_mmkv");
+
     napi_build_ohos::setup();
 }
