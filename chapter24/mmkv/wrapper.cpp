@@ -16,3 +16,7 @@ extern "C" void set(MMKV *mmkv,float v,const std::string &k) {
 extern "C" float get_float(MMKV *mmkv,const std::string &k) {
     return mmkv->getFloat(k);
 }
+
+extern "C" double get_double(MMKV *mmkv,const std::string &k) {
+    return mmkv->getDouble(k);
+}

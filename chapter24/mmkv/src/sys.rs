@@ -5,6 +5,7 @@ pub struct MMKV {
     _unused: [u8; 0],
 }
 
+#[link(name="native_mmkv",kind = "static")]
 extern "C" {
     pub fn getDefaultMMKV() -> MMKV;
     pub fn init(dir: *const c_char) -> c_void;
