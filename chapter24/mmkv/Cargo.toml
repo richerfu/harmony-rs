@@ -9,12 +9,10 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-napi-ohos        = { path = "/Users/ranger/Desktop/project/ohos-rs/ohos-rs/crates/napi" }
-napi-derive-ohos = { path = "/Users/ranger/Desktop/project/ohos-rs/ohos-rs/crates/macro" }
-cxx ="1.0"
+napi-ohos        = { version = "*" }
+napi-derive-ohos = { version = "*" }
 
 [build-dependencies]
 napi-build-ohos = { version = "*" }
 cc = "1.0.83"
-cxx-build="1.0"
 walkdir = "2"
