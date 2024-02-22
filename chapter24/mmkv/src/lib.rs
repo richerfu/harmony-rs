@@ -1,8 +1,6 @@
 mod sys;
 
 use napi_derive_ohos::napi;
-use napi_ohos::bindgen_prelude::pre_init;
-use napi_ohos::module_init;
 
 #[napi]
 pub fn add(value: i32) -> i32 {
@@ -13,9 +11,4 @@ pub fn add(value: i32) -> i32 {
         let result = sys::get_float(mmkv, "float\0".as_ptr().cast());
         result.into()
     }
-}
-
-#[module_init]
-fn init() {
-    pre_init();
 }
