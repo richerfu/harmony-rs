@@ -12,12 +12,12 @@ extern "C" void init_mmkv() {
     MMKV::initializeMMKV(tmp);
 }
 
-extern "C" void set_float(MMKV *mmkv,float v,const char *k) {
+extern "C" void set_float(MMKV *mmkv,int32_t v,const char *k) {
     std::string tmp(k);
     mmkv->set(v,tmp);
 }
 
-extern "C" float get_float(MMKV *mmkv,const char *k) {
+extern "C" int32_t get_float(MMKV *mmkv,const char *k) {
     std::string tmp(k);
-    return mmkv->getFloat(tmp);
+    return mmkv->getInt32(tmp);
 }
