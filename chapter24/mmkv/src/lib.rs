@@ -1,21 +1,21 @@
 mod sys;
 
 use napi_derive_ohos::napi;
-use std::ffi::c_float;
+use napi_ohos::bindgen_prelude::pre_init;
+use napi_ohos::module_init;
 
 #[napi]
-pub fn add(left: u32, right: u32) -> u32 {
+pub fn add(_left: u32, _right: u32) -> f32 {
     unsafe {
-        sys::initializeMMKV(
-            "/data/storage/el2/base/haps/entry/files/mmkv\0"
-                .as_ptr()
-                .cast(),
-        );
-
-        let mmkv = sys::getDefaultMMKV();
-
-        sys::set(&mmkv, (10 as c_float).into(), "float\0".as_ptr().cast());
-        sys::get_float(&mmkv, "float\0".as_ptr().cast());
+        sys::init_mmkv();
+        let mmkv = sys::get_mmkv_instance();
+        sys::set_float(mmkv,3.12,"float\0".as_ptr().cast());
+        let result = sys::get_float(mmkv,"float\0".as_ptr().cast());
+        result.into()
     }
-    left + right
+}
+
+#[module_init]
+fn init() {
+    pre_init();
 }

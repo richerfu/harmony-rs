@@ -1,5 +1,5 @@
 [package]
-name    = "hello"
+name    = "world"
 version = "0.1.0"
 edition = "2021"
 
@@ -9,8 +9,11 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-napi-ohos        = { version = "*" }
-napi-derive-ohos = { version = "*" }
+napi-ohos        = { path = "/Users/ranger/Desktop/project/ohos-rs/ohos-rs/crates/napi" }
+napi-derive-ohos = { path = "/Users/ranger/Desktop/project/ohos-rs/ohos-rs/crates/macro" }
+
+#napi-ohos        = { version = "*" }
+#napi-derive-ohos = { version = "*" }
 
 [build-dependencies]
 napi-build-ohos = { version = "*" }

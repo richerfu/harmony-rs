@@ -5,9 +5,10 @@ pub struct MMKV {
     _unused: [u8; 0],
 }
 
+#[link(name = "native_mmkv", kind = "static")]
 extern "C" {
-    pub fn getDefaultMMKV() -> MMKV;
-    pub fn initializeMMKV(dir: *const c_char) -> c_void;
-    pub fn set(mmkv: &MMKV,v: c_float,k: *const c_char) -> c_void;
-    pub fn get_float(mmkv: &MMKV,k: *const c_char) -> c_float;
+    pub fn get_mmkv_instance() -> *const MMKV;
+    pub fn init_mmkv() -> c_void;
+    pub fn set_float(mmkv: *const MMKV, v: c_float, k: *const c_char) -> c_void;
+    pub fn get_float(mmkv: *const MMKV, k: *const c_char) -> c_float;
 }
