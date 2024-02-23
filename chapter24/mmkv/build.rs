@@ -9,6 +9,7 @@ fn main() {
     let basic_h = PathBuf::from(&ndk).join("native/sysroot/usr/include");
     println!("cargo:rustc-link-search={:?}", &h);
     println!("cargo:rustc-link-search={:?}", &basic_h);
+    println!("cargo:rerun-if-changed=wrapper.cpp");
 
     let v = env::var("TARGET").unwrap();
 
