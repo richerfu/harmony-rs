@@ -15,3 +15,4 @@ napi-derive-ohos = { version = "*" }
 [build-dependencies]
 napi-build-ohos = { version = "*" }
 cc = "1.0.83"
+walkdir = "2"
