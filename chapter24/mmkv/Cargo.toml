@@ -16,3 +16,6 @@ napi-derive-ohos = { version = "*" }
 napi-build-ohos = { version = "*" }
 cc = "1.0.83"
 walkdir = "2"
+
+[profile.release]
+lto = true

@@ -1,3 +1,6 @@
 [submodule "chapter24/mmkv/mmkv"]
 	path = chapter24/mmkv/mmkv
 	url = https://github.com/Tencent/MMKV
+[submodule "chapter24/mmkv_harmony/entry/src/main/cpp/mmkv"]
+	path = chapter24/mmkv_harmony/entry/src/main/cpp/mmkv
+	url = https://github.com/Tencent/MMKV
