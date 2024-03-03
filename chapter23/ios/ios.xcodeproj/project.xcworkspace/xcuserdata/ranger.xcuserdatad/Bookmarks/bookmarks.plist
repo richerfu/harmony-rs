@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>top-level-items</key>
+	<array>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>Timestamp</key>
+					<string>731162076.131835</string>
+					<key>XcodeLocation</key>
+					<string>{"Selection":{"Editor":"Xcode3BuildSettingsEditor","Target":"ios","Xcode3BuildSettingsEditorLocations":[{"Collapsed Build Property Categories":["\u0001Build Options||ENABLE_PREVIEWS","\u0001Deployment||DEVELOPMENT_ASSET_PATHS","\u0001Deployment||INSTALL_PATH","\u0001Deployment||STRIP_INSTALLED_PRODUCT","\u0001Deployment||TARGETED_DEVICE_FAMILY","\u0001Info.plist Values||INFOPLIST_KEY_UIApplicationSceneManifest_Generation","\u0001Info.plist Values||INFOPLIST_KEY_UILaunchScreen_Generation","\u0001Info.plist Values||INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad","\u0001Info.plist Values||INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone","\u0001Info.plist Values||INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents","\u0001Linking - General||LD_RUNPATH_SEARCH_PATHS","\u0001Localization||SWIFT_EMIT_LOC_STRINGS","\u0001Packaging||GENERATE_INFOPLIST_FILE","\u0001Packaging||INFOPLIST_FILE","\u0001Packaging||PRODUCT_BUNDLE_IDENTIFIER","\u0001Packaging||PRODUCT_NAME","\u0001Signing||CODE_SIGN_STYLE","\u0001Versioning||CURRENT_PROJECT_VERSION","\u0001Versioning||MARKETING_VERSION","Asset Catalog Compiler - Options||ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME","Asset Catalog Compiler - Options||ASSETCATALOG_COMPILER_APPICON_NAME","Swift Compiler - General||SWIFT_OBJC_BRIDGING_HEADER","Swift Compiler - Language||SWIFT_VERSION","Swift Compiler - Search Paths||SWIFT_INCLUDE_PATHS","User-Defined||MTL_FAST_MATH"],"Selected Build Properties":["Swift Compiler - Search Paths||SWIFT_INCLUDE_PATHS"],"Xcode3BuildPropertyNameDisplayMode":1,"Xcode3BuildPropertyValueDisplayMode":0,"Xcode3BuildSettingsEditorDisplayMode":0,"Xcode3BuildSettingsEditorMode":1}]}}</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>ios.xcodeproj</string>
+					</dict>
+				</dict>
+				<key>type</key>
+				<string>Xcode3ProjectDocumentLocation</string>
+			</dict>
+			<key>title</key>
+			<string>ios Build Settings</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+	</array>
+</dict>
+</plist>
