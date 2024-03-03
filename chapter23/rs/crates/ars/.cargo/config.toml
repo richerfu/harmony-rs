@@ -1,0 +1,4 @@
+# should change to your ndk path
+[target.aarch64-linux-android]
+ar = "/Volumes/PSSD/android/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-ar"
+linker = "/Volumes/PSSD/android/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android33-clang"

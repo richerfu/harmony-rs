@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Rust"
+rootProject.name = "rust"
 include ':app'
