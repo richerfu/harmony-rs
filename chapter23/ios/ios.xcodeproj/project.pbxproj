@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		448498052B94B32B00167191 /* libirs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 448498042B94B32100167191 /* libirs.a */; };
+		441EDD542B95F9D0007D9513 /* libirs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 441EDD532B95F991007D9513 /* libirs.a */; };
+		441EDD562B95FA33007D9513 /* libirs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 441EDD552B95FA33007D9513 /* libirs.a */; };
 		44D64C242B949FAD00D0990E /* rs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D64C232B949FAD00D0990E /* rs.swift */; };
 		44E1D67C2B8B3BE100CE7E61 /* iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1D67B2B8B3BE100CE7E61 /* iosApp.swift */; };
 		44E1D67E2B8B3BE100CE7E61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1D67D2B8B3BE100CE7E61 /* ContentView.swift */; };
@@ -17,7 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		448498042B94B32100167191 /* libirs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libirs.a; path = libs/libirs.a; sourceTree = "<group>"; };
+		441EDD532B95F991007D9513 /* libirs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libirs.a; path = libs/libirs.a; sourceTree = "<group>"; };
+		441EDD552B95FA33007D9513 /* libirs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libirs.a; path = ../../rs/target/universal/debug/libirs.a; sourceTree = "<group>"; };
 		448BD18E2B94B05900D3D1C0 /* irs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = irs.h; sourceTree = "<group>"; };
 		44D64C232B949FAD00D0990E /* rs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rs.swift; sourceTree = "<group>"; };
 		44E1D6782B8B3BE100CE7E61 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,7 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				448498052B94B32B00167191 /* libirs.a in Frameworks */,
+				441EDD562B95FA33007D9513 /* libirs.a in Frameworks */,
+				441EDD542B95F9D0007D9513 /* libirs.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +46,7 @@
 		44D64C102B9493FB00D0990E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				448498042B94B32100167191 /* libirs.a */,
+				441EDD532B95F991007D9513 /* libirs.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -59,6 +62,7 @@
 		44D64C302B94A68F00D0990E /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				441EDD552B95FA33007D9513 /* libirs.a */,
 			);
 			path = libs;
 			sourceTree = "<group>";
@@ -329,6 +333,7 @@
 				DEVELOPMENT_ASSET_PATHS = "../../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/usr/lib/libresolv.tbd ios/Preview\\ Content";
 				DEVELOPMENT_TEAM = VBD599F69R;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ios/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -365,6 +370,7 @@
 				DEVELOPMENT_ASSET_PATHS = "../../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/usr/lib/libresolv.tbd ios/Preview\\ Content";
 				DEVELOPMENT_TEAM = VBD599F69R;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ios/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
