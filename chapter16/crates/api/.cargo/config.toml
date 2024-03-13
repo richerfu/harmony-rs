@@ -1,3 +1,9 @@
+# windows use this config please
+#[target.aarch64-unknown-linux-ohos]
+#ar = "$OHOS_NDK_HOME/native/llvm/bin/llvm-ar.exe"
+#linker = "scripts/aarch64-unknown-linux-ohos-clang.bat"
+
+# unix's os use this config please
 [target.aarch64-unknown-linux-ohos]
 ar = "$OHOS_NDK_HOME/native/llvm/bin/llvm-ar"
 linker = "scripts/aarch64-unknown-linux-ohos-clang.sh"
